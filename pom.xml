@@ -29,6 +29,25 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+				  <cloudHubDeployment>
+				    
+				    <muleVersion>4.0.0</muleVersion>
+				    
+				    <!-- Deploy use Parameter -->
+				    
+				    <userName>${anypoint.username}</userName>
+				    <password>${anypoint.password}</password>
+				    <applicationName>CICD-Jenkins20240201</applicationName>
+				    <Environment>Sandbox</Environment>
+				    <businessGroup>${business}</businessGroup>
+				    <workers>1</workers>
+				    <workType>MICRO</workType>
+				    <objectstorev2>true</objectstorev2>
+				    <region>us-east-2</region>
+				  </cloudHubDeployment>
+				  <classifier>mule-Application</classifier>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
