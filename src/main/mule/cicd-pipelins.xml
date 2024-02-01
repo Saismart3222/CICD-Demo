@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="4b994133-4964-4d13-8efe-f96bf2be0d57" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<http:listener-config name="HTTP_Listener_config1" doc:name="HTTP Listener config" doc:id="5f0036ed-b5f6-402c-b90a-0d4f19d8387a" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="cicd-pipelinsFlow" doc:id="744129a2-4c13-46d3-b03f-ebca52ecbf14" >
+		<http:listener doc:name="Listener" doc:id="6924c4b7-cc91-4246-b7a4-32443116643a" config-ref="HTTP_Listener_config1" path="/hello"/>
+		<set-payload value="Hello world!" doc:name="Set Payload" doc:id="b8cb41ca-0777-4c07-937f-4fff809a0271" />
+	</flow>
+</mule>
